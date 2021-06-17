@@ -1,10 +1,7 @@
 import AlgoliaPlaces from "algolia-places-react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-import {useState} from 'react';
-
-
-
+import { useState } from "react";
 
 const config = {
   appId: process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -78,37 +75,33 @@ const HotelEditForm = ({
         />
 
         <input
-        type="number"
-         name="bed"
+          type="number"
+          name="bed"
           onChange={handleChange}
           placeholder="Number of Beds"
-           className="form-control m-2"
-            value={bed}
-           /> 
-
-            
+          className="form-control m-2"
+          value={bed}
+        />
       </div>
 
       <DatePicker
-   
-      selected={startDate}
-      onChange={date => setStartDate(date)}
-      selectsStart
-      startDate={startDate}
-      endDate={endDate}
-    />
-    <DatePicker
-     
-      selected={endDate}
-      onChange={date => setEndDate(date)}
-      selectsEnd
-      startDate={startDate}
-      endDate={endDate}
-      minDate={startDate}
-    />
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        selectsStart
+        startDate={startDate}
+        endDate={endDate}
+      />
+      <DatePicker
+        selected={endDate}
+        onChange={(date) => setEndDate(date)}
+        selectsEnd
+        startDate={startDate}
+        endDate={endDate}
+        minDate={startDate}
+      />
 
       <button className="btn btn-outline-primary m-2">Save</button>
     </form>
   );
-        }
-export default HotelEditForm;       
+};
+export default HotelEditForm;
