@@ -23,8 +23,8 @@ import {useState,useEffect} from "react";
     return (
         <>
             
-            <div className="container-fluid bg-info p-5 ">
-                <h1>Dashboard</h1>
+            <div className="container-fluid pt-5 ">
+                <h3 className="text-center">Dashboard</h3>
             </div>
 
             <div className="container-fluid p-4">

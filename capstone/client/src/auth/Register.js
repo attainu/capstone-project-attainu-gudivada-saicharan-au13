@@ -32,15 +32,15 @@ const Register =({history}) => {
   
     return (
       <>
-      <div className="container-fluid  bg-info p-5 text-center">
-      <h1>Register</h1>
+      <div className="container-fluid pt-5 text-center">
+      <h3 class="text-uppercase">Register</h3>
       </div>
       
      
 
       <div className="container">
-      <div className="row"> 
-      <div className="col-md-6 offset-md-3">
+      <div className="row no-gutters justify-content-center"> 
+      <div className="col-md-7 col-lg-6 col-xl-5">
       <RegisterForm
        handleSubmit={handleSubmit}
        name={name}

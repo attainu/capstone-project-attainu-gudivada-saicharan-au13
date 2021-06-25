@@ -40,8 +40,8 @@ const handleHotelDelete = async (hotelId) =>{
         <>
 
             
-            <div className="container-fluid bg-info p-5">
-                <h1>Dashboard</h1>
+            <div className="container-fluid pt-5">
+                <h3 className="text-center">Dashboard</h3>
             </div>
 
             <div className="container-fluid p-4">
@@ -49,25 +49,26 @@ const handleHotelDelete = async (hotelId) =>{
             </div>
 
             <div className="container-fluid">
-               <div className="row">
-               <div className="col-md-10">
-               <h2>Your Hotels</h2>
+               <div className="row no-gutters">
+                  <div className="col-12 col-md-8 mx-auto">
+                    <div className="row no-gutters mb-4">
+                        <div className="col-7">
+                            <h2>Your Hotels</h2>
+                        </div>
+                        <div className="col-5 d-flex justify-content-end">
+                            <Link  to="/hotels/new"className="btn btn-info align-self-center">
+                              + Add New
+                          </Link>
+                        </div>
+                    </div>
+                  </div>
                </div>
-               <div className="col-md-2">
-               <Link  to="/hotels/new"className="btn btn-info">
-             + Add New
-               </Link>
-
-               </div>
-
-               </div>
-               <div className="row"> 
-               {hotels.map(h=>
-                 <SmallCard key={h._id} h={h}
-                  showViewMoreButton={false} owner={true}
-                  handleHotelDelete={handleHotelDelete}
+               <div className="row no-gutters"> 
+                  {hotels.map(h=>
+                    <SmallCard key={h._id} h={h}
+                    showViewMoreButton={false} owner={true}
+                    handleHotelDelete={handleHotelDelete}
                   />)}
-              
                </div>
             </div>
         </>

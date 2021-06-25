@@ -1,5 +1,5 @@
 const RegisterForm = ({handleSubmit, name, setName, email, setEmail, password, setPassword}) => (
-    <form onSubmit={handleSubmit} className="mt-3">
+    <form onSubmit={handleSubmit} className="mt-3 text-capitalize">
             <div className="form-group mb-3">
                 <label className="form-label">your name</label>
                 <input
@@ -33,7 +33,7 @@ const RegisterForm = ({handleSubmit, name, setName, email, setEmail, password, s
                 />
             </div>
 
-            <button disabled={!name || !email || !password} className="btn btn-primary">Submit</button>
+            <button disabled={!name || !email || !password} className="btn btn-primary register-btn">Submit</button>
         </form>
 );
 

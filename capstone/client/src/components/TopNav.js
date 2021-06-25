@@ -16,7 +16,7 @@ const TopNav = () => {
     history.push("/login");
   };
   return (
-    <div className="nav bg-light d-flex justify-content-between">
+    <div className="nav nav-bg d-flex justify-content-end">
       <Link className="nav-link" to="/">
         Home{" "}
       </Link>

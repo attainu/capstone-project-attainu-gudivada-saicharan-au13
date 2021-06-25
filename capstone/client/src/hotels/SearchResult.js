@@ -22,9 +22,9 @@ const SearchResult =()=>{
     },[window.location.search])
     return(
         <>
-        <div className="col">
-        <br/>
-        <Search/>
+        <div className="col-12 col-md-8 col-lg-7 mx-auto">
+            <br/>
+            <Search/>
         </div>
         <div className="container">
         <div className="row">

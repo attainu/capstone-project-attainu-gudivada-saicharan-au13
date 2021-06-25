@@ -75,31 +75,49 @@ const EditHotel = ({ match }) => {
 
   return (
     <>
-        <div className="container-fluid bg-info p-5 text-center">
-          <h2>Edit Hotel</h2>
-        </div>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
-            <br />
-            <HotelEditForm
-              values={values}
-              setValues={setValues}
-              handleChange={handleChange}
-              handleImageChange={handleImageChange}
-              handleSubmit={handleSubmit}
-            />
-          </div>
-          <div className="col-md-2">
-            <img
-              src={preview}
-              alt="preview_image"
-              className="img img-fluid m-2"
-            />
-           
+        <div className="container-fluid pt-5 text-center">
+          <div className="row no-gutters">
+            <div className="col-12">
+                <h3>Edit Hotel</h3>
+            </div>
           </div>
         </div>
-      </div>
+        <div className="container-fluid">
+          <div className="row no-gutters pt-5">
+            <div className="col-md-6">
+              <div className="row no-gutters">
+                <div className="col-9 mx-auto text-center">
+                    <img
+                    src={preview}
+                    alt="preview_image"
+                    className="img img-fluid"
+                  />
+                </div>
+                <div className="col-9 col-md-7 mx-auto">
+                    <label className="btn btn-outline-secondary btn-block text-left w-100 my-4 mt-md-5 mb-md-0">
+                      Re-Upload Hotel Image
+                      <input
+                        type="file"
+                        name="image"
+                        onChange={handleImageChange}
+                        accept="image/*"
+                        hidden
+                      />
+                    </label>
+                  </div>
+              </div>
+            </div>
+            <div className="col-md-5">
+              <HotelEditForm
+                values={values}
+                setValues={setValues}
+                handleChange={handleChange}
+                handleImageChange={handleImageChange}
+                handleSubmit={handleSubmit}
+              />
+            </div>
+          </div>
+        </div>
     </>
   );
 };

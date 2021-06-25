@@ -5,12 +5,14 @@ const DashboardNav = () => {
     const active=window.location.pathname;
     // console.log(active);
     return (
-        <ul>
+        <ul className="list-unstyled text-center">
             <li className="nav-item">
-                <Link  className={`nav-link ${active ==="/dashboard/seller  " && 'active'}`} 
+                <div className="d-inline-block">To view your hotels </div>
+                &nbsp; &nbsp;
+                <Link  className={`btn btn-primary ${active ==="/dashboard/seller  " && 'active'}`} 
                 
                  to="/dashboard/seller">
-                Your Hotels</Link>
+                click here</Link>
             </li>
         </ul>
     );

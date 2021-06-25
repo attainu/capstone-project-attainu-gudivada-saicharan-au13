@@ -30,7 +30,7 @@ const NewHotel = () => {
   const [endDate, setEndDate] = useState(null);
 
   const [preview, setPreview] = useState(
-    "https://via.placeholder.com/100x100.png?text=PREVIEW"
+    "https://via.placeholder.com/400x400.png?text=PREVIEW"
   );
   const [location, setLocation] = useState("");
   const { title, content, image, price, starDate, enDate, bed } = values;
@@ -75,95 +75,153 @@ const NewHotel = () => {
   const hotelForm = () => (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label className="btn btn-outline-secondary btn-block m-2 text-left">
-          Image
-          <input
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-            accept="image/*"
-            hidden
-          />
-        </label>
-        <input
-          type="text"
-          name="title"
-          onChange={handleChange}
-          placeholder="title"
-          className="form-control m-2"
-          value={title}
-        />
-        <textarea
-          name="content"
-          onChange={handleChange}
-          placeholder="Content"
-          className="form-control m-2"
-          value={content}
-        />
-        <AlgoliaPlaces
-          className="form-control ml-2 mr-2"
-          placeholder="Location"
-          defaultValue={location}
-          options={config}
-          onChange={({ suggestion }) => setLocation(suggestion.value)}
-          style={{ height: "50px" }}
-        />
-        <input
-          type="number"
-          name="price"
-          onChange={handleChange}
-          placeholder="Price"
-          className="form-control m-2"
-          value={price}
-        />
-        <input
-          type="number"
-          name="bed"
-          onChange={handleChange}
-          placeholder="Number of Beds"
-          className="form-control m-2"
-          value={bed}
-        />
+        <div className="row no-gutters">
+          {/* <div className="col-12">
+            <label className="btn btn-outline-secondary btn-block text-left">
+              Upload Hotel Image
+              <input
+                type="file"
+                name="image"
+                onChange={handleImageChange}
+                accept="image/*"
+                hidden
+              />
+            </label>
+          </div> */}
+          <div className="col-12 mb-3">
+            <label for="" class="mb-1">
+              Hotel Title:
+            </label>
+            <input
+              type="text"
+              name="title"
+              onChange={handleChange}
+              placeholder="Enter Hotel Title"
+              className="form-control"
+              value={title}
+            />
+          </div>
+          <div className="col-12 mb-3">
+            <label for="" class="mb-1">
+              Hotel Description:
+            </label>
+            <textarea
+              name="content"
+              onChange={handleChange}
+              placeholder="Enter Hotel Description"
+              className="form-control"
+              value={content}
+            />
+          </div>
+          <div className="col-12 mb-3">
+            <label for="" class="mb-1">
+              Hotel Location:
+            </label>
+            <AlgoliaPlaces
+              className="form-control ml-2 mr-2"
+              placeholder="Enter Hotel Location"
+              defaultValue={location}
+              options={config}
+              onChange={({ suggestion }) => setLocation(suggestion.value)}
+              style={{ height: "50px" }}
+            />
+          </div>
+          <div className="col-12 mb-3">
+            <label for="" class="mb-1">
+              Hotel Price:
+            </label>
+            <input
+              type="number"
+              name="price"
+              onChange={handleChange}
+              placeholder="Enter Hotel Price"
+              className="form-control"
+              value={price}
+            />
+          </div>
+          <div className="col-12 mb-3">
+            <label for="" class="mb-1">
+              Number of Beds:
+            </label>
+            <input
+              type="number"
+              name="bed"
+              onChange={handleChange}
+              placeholder="Enter Number of Beds"
+              className="form-control"
+              value={bed}
+            />
+          </div>
+          <div className="col-12 mb-3">
+            <div className="row no-gutters ">
+              <div class=" col-md-5 ">
+                <label for="" class="mb-1 mt-1 d-block">
+                  Start Date:
+                </label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  selectsStart
+                  startDate={startDate}
+                  endDate={endDate}
+                />
+              </div>
+              <div class=" col-md-5">
+                <label for="" class="mb-1 mt-1 d-block">
+                  End Date:
+                </label>
+                <DatePicker
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  selectsEnd
+                  startDate={startDate}
+                  endDate={endDate}
+                  minDate={startDate}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-lg-4 pt-3 pb-5">
+            <button className="btn btn-block btn-lg btn-outline-primary w-100">
+              Save Hotel
+            </button>
+          </div>
+        </div>
       </div>
-
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={(date) => setEndDate(date)}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-      />
-
-      <button className="btn btn-outline-primary m-2">Save</button>
     </form>
   );
 
   return (
     <>
-      <div className="container fluid bg-info p-5 text-center">
-        <h2>Add Hotel</h2>
+      <div className="container fluid pt-5 text-center">
+        <h3>Add Hotel</h3>
       </div>
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
-            <br />
-            {hotelForm()}
+        <div className="row no-gutters pt-5">
+          <div className="col-md-6">
+            <div className="row no-gutters">
+              <div className="col-9 mx-auto text-center">
+                <img
+                  src={preview}
+                  alt="preview_image"
+                  className="img img-fluid"
+                />
+              </div>
+              <div className="col-9 col-md-7 mx-auto">
+                <label className="btn btn-outline-secondary btn-block text-left w-100 my-4 mt-md-5 mb-md-0">
+                  Upload Hotel Image
+                  <input
+                    type="file"
+                    name="image"
+                    onChange={handleImageChange}
+                    accept="image/*"
+                    hidden
+                  />
+                </label>
+              </div>
+            </div>
           </div>
-          <div className="col-md-2">
-            <img
-              src={preview}
-              alt="preview_image"
-              className="img img-fluid m-2"
-            />
-          </div>
+          <div className="col-md-5">{hotelForm()}</div>
         </div>
       </div>
     </>

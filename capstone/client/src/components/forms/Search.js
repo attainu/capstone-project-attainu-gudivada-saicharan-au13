@@ -34,9 +34,9 @@ return(
     options={config}
     onChange={( {suggestion})=>setLocation(suggestion.value)}   
     style={{height:"50px"}} 
-     />    
+    id="location-input" />    
      </div>
- <SearchOutlined onClick={handleSubmit } className="btn btn-primary p-3 btn-square" 
+ <SearchOutlined onClick={handleSubmit } className="btn btn-primary btn-square d-flex justify-content-center align-items-center" id="search-btn" 
  />
     
    

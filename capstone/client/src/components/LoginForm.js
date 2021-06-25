@@ -22,7 +22,7 @@ const LoginForm = ({handleSubmit,  email, setEmail, password, setPassword}) => (
             />
         </div>
 
-        <button disabled={!email || !password} className="btn btn-primary">Submit</button>
+        <button disabled={!email || !password} className="btn btn-primary login-submit">Submit</button>
     </form>
 );
 
